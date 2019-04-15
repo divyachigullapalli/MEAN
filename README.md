@@ -1,6 +1,6 @@
 # Project Name
 
->MEAN
+>Angular UI project
 
 ## Team
 
@@ -13,8 +13,6 @@
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
     1. [Tasks](#tasks)
-1. [Team](#team)
-1. [Contributing](#contributing)
 
 ## Usage
 
@@ -22,8 +20,9 @@
 
 ## Requirements
 
-- Node 0.10.x
-- mongodb
+- Angular 1.x
+- Angular Route
+- bootstrap
 
 ## Development
 
