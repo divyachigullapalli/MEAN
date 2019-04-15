@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="eStationaryMart">
+
+<head>
+    <base href="/">
+
+    <head>
+        <title>E Stationary Mart!</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
+            id="bootstrap-css">
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+</head>
+
+<body ng-controller="AppController">
+    <div>
+        <div ng-if="hasSession" class="top-nav">
+            Welcome {{user}}!!!!
+            <div class="top-nav-right">
+                <a ng-click="" href='/order' class="btn btn-primary">Your Orders</a>
+                <a ng-click="signout()" href='/logout' class="btn pull-right btn-primary  active">Log Out</a>
+            </div>
+        </div>
+    </div>
+    <div ng-view></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.3/ui-bootstrap-tpls.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
+    <script src="app.js"></script>
+    <script src="components/authentication/authentication.controller.js"></script>
+    <script src="components/stationaryLists/stationary.controller.js"></script>
+    <script src="components/orderDetails/orderDetails.controller.js"></script>
+    <script src="app.service.js"></script>
+
+</body>
+
+</html>

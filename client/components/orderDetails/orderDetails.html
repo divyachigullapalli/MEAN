@@ -1,0 +1,49 @@
+<div id="orders" class="container">
+    <h2>My Orders</h2>
+
+    <ul class="list-group" ng-repeat="order in orders">
+        <div>
+            <p class="h5" style="display:inline-block;">Order Id: {{order._id}}</p>
+            <p class="float-right">
+                <span ng-if="order.Status == false" ng-click="editOrder(order._id)" class="glyphicon glyphicon-edit">
+                    Edit
+                </span>
+
+                <span ng-if="order.Status == false" ng-click="delete(order._id)" class="glyphicon glyphicon-trash ">
+                    Delete
+                </span>
+            </p>
+
+        </div>
+
+
+        <li class="list-group-item" ng-repeat="item in order.items">
+            <div>
+                <p>Name: {{item.name}}</p>
+                <div ng-if="order.edit!=true">
+                    <p>Quantity: {{item.quantity}}</p>
+                    <p>Total cost for this item: {{item.total}}</p>
+                </div>
+                <div ng-if="order.Status == false && order.edit==true">
+                    <input type="number" ng-model="item.quantity" value="{{item.quantity}}" />
+                    <p>Total cost for this item: {{item.quantity * item.price}}</p>
+                    <span ng-if="order.Status == false && order.edit==true" ng-click="updateOrder(order._id,item)"
+                        class="glyphicon glyphicon-ok-sign "> Save
+                    </span>
+                </div>
+            </div>
+        </li>
+        <div ng-if="user==='admin'">
+            Approve Status :
+            <select name="singleSelect" ng-change="updateStatus(order._id)" ng-model="selectedItem">
+                <option value=true>Approve</option>
+                <option value=false>Reject</option>
+            </select> <br>
+            Status: {{order.Status == false? "Pending for Approval": "Approved."}}
+        </div>
+        <div ng-if="user!='admin'"> Status:
+            {{order.Status == false? "Pending for Approval": "Approved. Please Collect from phase 1"}}</div>
+    </ul>
+    <br><br>
+
+</div>

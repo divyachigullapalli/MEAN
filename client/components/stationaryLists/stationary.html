@@ -1,0 +1,21 @@
+<h2>Available Stationery Items</h2>
+<div class="list-row">
+    <div class="col-md-4 col-sm-6 list-item" ng-repeat="item in availableItems.products">
+        <section role="presentation">
+            <div>
+                <input type="checkbox" value="" ng-model="selected">
+                <img class="img-fluid rounded" ng-src="{{item.imgUrl}}" style="width:80%;max-height: 275px;" />
+            </div>
+
+            <h3 class="name">{{item.name}}</h3>
+            <h4 class="price">Price :INR {{item.price}}</h4>
+            <div ng-show="selected" class="quantity">
+                Quantity: <input type="number" ng-model="item.quantity" placeholder="Enter Quantity">
+                <button type="button" class="btn btn-primary" ng-click="addToCart(item)" ng-disabled="!item.quantity">
+                    <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+                </button>
+                <button type="button" class="btn btn-primary" ng-click="order()">Order </button>
+            </div>
+        </section>
+    </div>
+</div>
