@@ -1,0 +1,24 @@
+
+<div class="container col-sm-8">
+    <h2 class="h2"> List Of Employees</h2>
+    <table class="table" border="1">
+     <thead class="thead-dark">
+        <tr >
+            <th style="width:150px">Name</th>
+            <th style="width:150px">AGE</th>
+            <th style="width:150px">Email</th>
+            <th>Action</th>
+        </tr>
+     </thead>
+     <tbody>
+        <tr ng-repeat="employee in vm.employees">
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.age }}</td>
+            <td>{{ employee.email }}</td>
+            <td>
+                <a href="/new" ng-click="vm.edit(employee.id)">edit</a>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

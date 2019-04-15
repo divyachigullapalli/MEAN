@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="clearfix">
+    <div class="modal-body col-sm-8" style="margin: auto;">
+      <form class="form-horizontal" role="form">
+        <h2 class="h2 row"> {{vm.action}} Employee</h2>
+        <hr>
+        <div class="form-group row">
+          <label for="staticEmail" class="col-sm-1 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" ng-model="vm.newEmployee.name" placeholder="Employee Name" class="form-control">
+          </div>
+        </div>
+         <div class="form-group row">
+          <label for="staticEmail" class="col-sm-1 col-form-label">Age</label>
+          <div class="col-sm-10">
+            <input type="number" ng-model="vm.newEmployee.age" placeholder="Employee Age" class="form-control">
+          </div>
+        </div>
+         <div class="form-group row">
+          <label for="staticEmail" class="col-sm-1 col-form-label">Email</label>
+          <div class="col-sm-10">
+           <input type="email" ng-model="vm.newEmployee.email" placeholder="Employee email" class="form-control">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="model-grey-color" style="width:50%; margin: auto;">
+      <button class="btn btn-primary" ng-click="vm.saveRecord(newEmployee)"><i class="glyphicon glyphicon-floppy-save"></i> {{vm.action}}</button>
+      <button class="btn btn-dark" ng-click="vm.cancel()"><i class="glyphicon glyphicon-remove"></i> Cancel</button>
+    </div>
+  </div>
+</div>
